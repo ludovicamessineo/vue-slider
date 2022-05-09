@@ -34,19 +34,19 @@ const app = new Vue (
 
         methods: {
             prevCity: function () {
-                if (currentSlide == 0) {
-                    currentSlide = data.length - 1;
+                if (this.currentCity === 0) {
+                    this.currentCity = this.cityItems.length - 1;
                 } else {
-                    currentSlide--;
+                    this.currentCity--;
                 }
             }
         },
 
             nextCity: function () {
-                if (currentSlide == data.length - 1) {
-                    currentSlide = 0;
+                if (this.currentCity >= (this.cityItems.length - 1)) {
+                    this.currentCity = 0;
                 } else {
-                    currentSlide++; 
+                    this.currentCity++; 
                 }
             }
     }

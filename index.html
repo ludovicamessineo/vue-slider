@@ -10,27 +10,26 @@
 </head>
 <body>
 
-    <div class="root">
+    <div id="root">
         <div class="container">
             <div class="items">
-                <!--
                 <div class="item active">
-                    <img src="./img/01.jpg" alt="">
+                    <img :src="cityItems[currentCity].image" alt="">
                     <div class="text">
-                        <h3>Lorem</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.</p>
+                        <h3> {{ cityItems[currentCity].title }} </h3>
+                        <p> {{ cityItems[currentCity].text }} </p>
                     </div>
                 </div>
-                -->
+               
             </div>
             <div class="thumbs">
-                <!--
-                <div class="thumb active">
-                    <img src="./img/01.jpg" alt="">
+                <div @click="prevCity" class="prev"></div>
+                <div @click="nextCity" class="next"></div>
+                
+                <div class="thumb" :class="{ active: index === currentCity}" v-for="(item, index) in cityItems">
+                    <img :src="item.image" alt="">
                 </div>
-                -->
-                <div class="prev"></div>
-                <div class="next"></div>
+               
             </div>
         </div>
     </div>
