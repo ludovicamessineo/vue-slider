@@ -39,8 +39,8 @@ const app = new Vue (
                 } else {
                     this.currentCity--;
                 }
-            }
-        },
+            },
+        
 
             nextCity: function () {
                 if (this.currentCity >= (this.cityItems.length - 1)) {
@@ -49,5 +49,6 @@ const app = new Vue (
                     this.currentCity++; 
                 }
             }
+        }
     }
 );
